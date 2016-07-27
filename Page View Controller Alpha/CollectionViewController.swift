@@ -23,6 +23,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //print("VIEW DID LOAD LAUNCHED COLLECTION CONTROLLER")
 //        let width = (CGRectGetWidth(collectionView!.frame) - leftAndRightPaddings) / numberOfItemsPerRow
 //        let layout = collectionViewLayout as! UICollectionViewFlowLayout
