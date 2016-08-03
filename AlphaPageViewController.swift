@@ -9,7 +9,11 @@
 import UIKit
 
 class AlphaPageViewController: UIPageViewController {
-
+    //Current Index
+    var currentIndex = 0
+    //data source
+    
+    
     private(set) lazy var orderedViewControllers: [UIViewController] = {
         return [self.newColoredViewController("Green"),
                 self.newColoredViewController("Red"),
@@ -17,10 +21,15 @@ class AlphaPageViewController: UIPageViewController {
     }()
     
     private func newColoredViewController(color: String) -> UIViewController {
+        print("Current Index: \(currentIndex)")
+//        let memories = Memories(curr_page: currentIndex)
+//        let newView = CollectionViewController(memories: memories)
+//        addChildViewController(newView)
+        
         return UIStoryboard(name: "Main", bundle: nil) .
             instantiateViewControllerWithIdentifier("\(color)ViewController")
     }
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource = self
@@ -32,8 +41,9 @@ class AlphaPageViewController: UIPageViewController {
             }
         
     }
+    
 }
-    extension AlphaPageViewController: UIPageViewControllerDataSource {
+    extension AlphaPageViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
 
     
     func pageViewController(pageViewController: UIPageViewController,
@@ -41,8 +51,10 @@ class AlphaPageViewController: UIPageViewController {
         guard let viewControllerIndex = orderedViewControllers.indexOf(viewController) else {
             return nil
         }
-        
+
         let previousIndex = viewControllerIndex - 1
+        currentIndex = viewControllerIndex
+        //print("Current Index: \(currentIndex)")
         
         guard previousIndex >= 0 else {
             return nil
@@ -51,10 +63,9 @@ class AlphaPageViewController: UIPageViewController {
         guard orderedViewControllers.count > previousIndex else {
             return nil
         }
-        
         return orderedViewControllers[previousIndex]
+//        return newView
     }
-    
     func pageViewController(pageViewController: UIPageViewController,
                             viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         guard let viewControllerIndex = orderedViewControllers.indexOf(viewController) else {
@@ -62,6 +73,8 @@ class AlphaPageViewController: UIPageViewController {
         }
         
         let nextIndex = viewControllerIndex + 1
+        currentIndex = viewControllerIndex
+        //print(currentIndex)
         let orderedViewControllersCount = orderedViewControllers.count
         
         guard orderedViewControllersCount != nextIndex else {
@@ -73,6 +86,7 @@ class AlphaPageViewController: UIPageViewController {
         }
         
         return orderedViewControllers[nextIndex]
+//        return newView
     }
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
             return orderedViewControllers.count
@@ -83,9 +97,9 @@ class AlphaPageViewController: UIPageViewController {
             firstViewControllerIndex = orderedViewControllers.indexOf(firstViewController) else {
             return 0
         }
-            
+            print(firstViewControllerIndex)
         return firstViewControllerIndex
     }
-        
     
 }
+    

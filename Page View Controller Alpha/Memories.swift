@@ -13,6 +13,8 @@ class Memories
     private var memories = [Memory]()
     private var tags = [String]()
     private let PAGESIZE = 9
+//    private let curr_page : Int
+    
     
     var pageSize: Int {
         return PAGESIZE
@@ -24,22 +26,32 @@ class Memories
     var numberOfTags: Int{
         return tags.count
     }
+    var numberOfSections: Int{
+        return memories.count / PAGESIZE
+    }
     
+//    var currentPage: Int{
+//        return curr_page
+//    }
+//    
     init()
     {
+//        self.curr_page = curr_page
         self.memories = createMemories()
         self.tags = gatherTags()
+        
     }
     
     func createMemories() -> [Memory]{
         var newMemories = [Memory]()
-        var i = 0
+        var i = 1
         while(UIImage(named: "0\(i)") != nil)
         {
-            i += 1
+            
             let newMemory = Memory(tag: [""], image: (UIImage(named: "0\(i)"))!, note: "0\(i).jpg", date: "now")
             newMemories.append(newMemory)
-            print("jpg index: \(i)")
+//            print("jpg index: \(i)")
+            i += 1
         
         }
         //If empty PhotoCell, fill with blank template
@@ -54,11 +66,11 @@ class Memories
             
         }
         //if empty set entirely, create blank page
-        else if(i == 0){
-            for j in 0...PAGESIZE-1{
-                newMemories.append(Memory(tag: [""], image: (UIImage(named : "Blank"))!, note: "Blank_Template_\(j)", date: "Unfilled"))
-            }
-        }
+//        else if(i == 0){
+//            for j in 0...PAGESIZE-1{
+//                newMemories.append(Memory(tag: [""], image: (UIImage(named : "Blank"))!, note: "Blank_Template_\(j)", date: "Unfilled"))
+//            }
+//        }
         
         return newMemories
     }
