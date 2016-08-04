@@ -11,6 +11,8 @@
 		95324AC21D4290F3007B8214 /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95324AC11D4290F3007B8214 /* Memory.swift */; };
 		95324AC41D429105007B8214 /* Memories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95324AC31D429105007B8214 /* Memories.swift */; };
 		95324AC61D4291F7007B8214 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95324AC51D4291F7007B8214 /* CollectionViewCell.swift */; };
+		954CF7991D53C9E200438B0B /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954CF7981D53C9E200438B0B /* NotesViewController.swift */; };
+		954CF79B1D53D0C500438B0B /* BarButtonNoteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954CF79A1D53D0C500438B0B /* BarButtonNoteItem.swift */; };
 		95CA5DFB1D414471009A0587 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA5DFA1D414471009A0587 /* AppDelegate.swift */; };
 		95CA5E041D414471009A0587 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95CA5E021D414471009A0587 /* Main.storyboard */; };
 		95CA5E061D414471009A0587 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95CA5E051D414471009A0587 /* Assets.xcassets */; };
@@ -45,6 +47,8 @@
 		95324AC11D4290F3007B8214 /* Memory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
 		95324AC31D429105007B8214 /* Memories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Memories.swift; sourceTree = "<group>"; };
 		95324AC51D4291F7007B8214 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		954CF7981D53C9E200438B0B /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		954CF79A1D53D0C500438B0B /* BarButtonNoteItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarButtonNoteItem.swift; sourceTree = "<group>"; };
 		95CA5DF71D414471009A0587 /* Page View Controller Alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Page View Controller Alpha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CA5DFA1D414471009A0587 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95CA5E031D414471009A0587 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 			children = (
 				95CA5E2E1D415816009A0587 /* AlphaPageViewController.swift */,
 				95324ABF1D428F86007B8214 /* CollectionViewController.swift */,
+				95DC6C931D523EB1001E240C /* MemoryViewController.swift */,
+				954CF7981D53C9E200438B0B /* NotesViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -101,8 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				95DC6C8F1D51231D001E240C /* SectionHeaderView.swift */,
-				95DC6C931D523EB1001E240C /* MemoryViewController.swift */,
 				95324AC51D4291F7007B8214 /* CollectionViewCell.swift */,
+				954CF79A1D53D0C500438B0B /* BarButtonNoteItem.swift */,
 				95CA5E021D414471009A0587 /* Main.storyboard */,
 				95DC6C911D522939001E240C /* NavigationController.swift */,
 			);
@@ -303,11 +309,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				95324AC21D4290F3007B8214 /* Memory.swift in Sources */,
+				954CF79B1D53D0C500438B0B /* BarButtonNoteItem.swift in Sources */,
 				95324AC01D428F86007B8214 /* CollectionViewController.swift in Sources */,
 				95DC6C921D522939001E240C /* NavigationController.swift in Sources */,
 				95324AC61D4291F7007B8214 /* CollectionViewCell.swift in Sources */,
 				95CA5E2F1D415816009A0587 /* AlphaPageViewController.swift in Sources */,
 				95DC6C901D51231D001E240C /* SectionHeaderView.swift in Sources */,
+				954CF7991D53C9E200438B0B /* NotesViewController.swift in Sources */,
 				95DC6C941D523EB1001E240C /* MemoryViewController.swift in Sources */,
 				95CA5DFB1D414471009A0587 /* AppDelegate.swift in Sources */,
 				95324AC41D429105007B8214 /* Memories.swift in Sources */,

@@ -10,20 +10,50 @@ import UIKit
 
 class Memory {
     
-    var image: UIImage
-    var tag : [String]
-    var note : String
-    var date : String
+    private var image: UIImage
+    private var tags : [String]
+    private var note : String
+    private var date : String
     
     
-    init(tag: [String], image: UIImage, note: String, date: String){
-        self.tag = tag
+    init(tags: [String], image: UIImage, note: String, date: String){
+        self.tags = tags
         self.image = image
         self.note = note
         self.date = date
     }
+    init(memory : Memory){
+        self.tags = memory.getTags()
+        self.image = memory.getImage()
+        self.note = memory.getNote()
+        self.date = memory.getDate()
+    }
+    init(){
+        self.tags = [""]
+        self.image = UIImage()
+        self.note = ""
+        self.date = ""
+    }
     func memoryImageName() -> String{
         return self.note
+    }
+    func getImage()-> UIImage{
+        return self.image
+    }
+    func getTags() -> [String]{
+        return self.tags
+    }
+    func getNote() ->String{
+        return self.note
+    }
+    func getDate() ->String{
+        return self.date
+    }
+    func editNote(note : String){
+        self.note = note
+    }
+    func editTags(tags : [String]){
+        self.tags = tags
     }
     
 }

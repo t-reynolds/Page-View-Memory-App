@@ -70,13 +70,15 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         return headerView
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showMemoryImage" {
+        if segue.identifier == "showImage" {
             let zoomVC = segue.destinationViewController as! MemoryViewController
             let indexPath = sender?.indexPath
-            print(indexPath)
+            print("index Path \(indexPath)")
             let cell = sender as! CollectionViewCell
-           
-            zoomVC.image = cell.imageView.image!
+           print( cell.memory!.memoryImageName())
+            //zoomVC.image = cell.imageView.image!
+            zoomVC.retainMemory(cell.memory!)
+            
         }
     }
     

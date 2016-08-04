@@ -48,7 +48,7 @@ class Memories
         while(UIImage(named: "0\(i)") != nil)
         {
             
-            let newMemory = Memory(tag: [""], image: (UIImage(named: "0\(i)"))!, note: "0\(i).jpg", date: "now")
+            let newMemory = Memory(tags: [""], image: (UIImage(named: "0\(i)"))!, note: "0\(i).jpg", date: "now")
             newMemories.append(newMemory)
 //            print("jpg index: \(i)")
             i += 1
@@ -61,7 +61,7 @@ class Memories
             let k = PAGESIZE - j
             
             for j in 0...k{
-                newMemories.append(Memory(tag: [""], image: (UIImage(named : "Blank"))!, note: "Blank_Template_\(j)", date: "Unfilled"))
+                newMemories.append(Memory(tags: [""], image: (UIImage(named : "Blank"))!, note: "Blank_Template_\(j)", date: "Unfilled"))
             }
             
         }

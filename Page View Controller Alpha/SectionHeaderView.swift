@@ -13,7 +13,7 @@ class SectionHeaderView: UICollectionReusableView {
     @IBOutlet weak var sectionLabel: UILabel!
     var memory: Memory? {
         didSet{
-            sectionLabel.text = memory?.date.uppercaseString
+            sectionLabel.text = memory?.getDate().uppercaseString
         }
     }
 }

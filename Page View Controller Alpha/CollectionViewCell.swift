@@ -18,6 +18,6 @@ class CollectionViewCell: UICollectionViewCell {
         }
     }
     func updateUI(){
-        imageView.image = memory?.image
+        imageView.image = memory?.getImage()
     }
 }

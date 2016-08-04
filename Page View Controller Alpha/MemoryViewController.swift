@@ -11,10 +11,11 @@ import UIKit
 class MemoryViewController: UIViewController {
     
     
+    @IBOutlet weak var NoteItem: BarButtonNoteItem!
     @IBOutlet weak var memoryImageView: UIImageView!
     
-    @IBOutlet weak var composeNote: UIBarButtonItem!
    
+    var memory = Memory()
     
     var image = UIImage()
     override func viewDidLoad() {
@@ -22,10 +23,31 @@ class MemoryViewController: UIViewController {
       
     }
     override func viewWillAppear(animated: Bool){
-        memoryImageView.image = image
+        print("Declaring Image To Be Shown")
+         //memoryImageView.image = image
+        declareImage()
+        buildNoteItem()
     }
-    
-   
+        func retainMemory(memory: Memory){
+        print("Declaring Memory")
+        self.memory = Memory(memory: memory)
+    }
+    func declareImage(){
+        print(memory.memoryImageName())
+        memoryImageView.image = memory.getImage()
+    }
+    func buildNoteItem(){
+        NoteItem.memory = memory
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showNote" {
+            let noteVC = segue.destinationViewController as! NotesViewController
+            let noteItem = sender as! BarButtonNoteItem
+            noteVC.retainMemory(noteItem.memory!)
+            
+        }
+    }
     
  
     
