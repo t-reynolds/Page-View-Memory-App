@@ -20,6 +20,7 @@ class MemoryViewController: UIViewController {
     var image = UIImage()
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Inside MemoryViewController")
       
     }
     override func viewWillAppear(animated: Bool){

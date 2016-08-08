@@ -17,24 +17,10 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     private struct Storyboard{
         static let CellIdentifier = "PhotoCell"
     }
-    
-//    init (memories: Memories) {
-//       
-//        let className = NSStringFromClass(self.dynamicType).componentsSeparatedByString(".").last
-//        print(className)
-//        print("INIT NOT REQUIRED METHOD")
-//        self.memories = memories
-//        super.init(nibName: className, bundle: NSBundle(forClass: self.dynamicType))
-//    }
-//    
-//    required init?(coder aDecoder: NSCoder) {
-//        print("IN REQUIRED INIT")
-//        self.memories = Memories(curr_page: 0)
-//        super.init(coder: aDecoder)
-//    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Inside CollectionViewController")
         
     }
      func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

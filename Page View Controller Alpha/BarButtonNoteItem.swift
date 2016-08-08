@@ -16,7 +16,7 @@ class BarButtonNoteItem: UIBarButtonItem {
         }
     }
     func updateNote(){
-        
+        print("Updating note")
     }
     
 }

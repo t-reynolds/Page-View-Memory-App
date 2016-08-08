@@ -17,6 +17,7 @@ class NotesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Inside NotesViewController")
     }
     override func viewWillAppear(animated: Bool){
         print("Declaring Note To Be Shown")
@@ -30,5 +31,12 @@ class NotesViewController: UIViewController {
         self.NoteView.text = self.memory.getNote()
 
     }
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+       // if segue.identifier == "showNote" {
+        print("Segue back to memory view controller")
+            let memoryVC = segue.destinationViewController as! MemoryViewController
+            memoryVC.retainMemory(self.memory)
+            
+        //}
+    }
 }

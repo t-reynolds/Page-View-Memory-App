@@ -41,7 +41,9 @@ class Memories
         self.tags = gatherTags()
         
     }
-    
+    func writeToFile(){
+        
+    }
     func createMemories() -> [Memory]{
         var newMemories = [Memory]()
         var i = 1
@@ -66,11 +68,11 @@ class Memories
             
         }
         //if empty set entirely, create blank page
-//        else if(i == 0){
-//            for j in 0...PAGESIZE-1{
-//                newMemories.append(Memory(tag: [""], image: (UIImage(named : "Blank"))!, note: "Blank_Template_\(j)", date: "Unfilled"))
-//            }
-//        }
+        if(i == 2){
+            for j in 0...PAGESIZE-1{
+                newMemories.append(Memory(tags: [""], image: (UIImage(named : "Blank"))!, note: "Blank_Template_\(j)", date: "Unfilled"))
+            }
+        }
         
         return newMemories
     }
@@ -80,16 +82,8 @@ class Memories
         return ["s"]
     }
     func memoriesForItemAtIndexPath(indexPath: NSIndexPath) -> Memory? {
-        //        print("indexPath.length: \(indexPath.length)")
-        //        print("indexPath.section: \(indexPath.section)")
-        //        print("indexSectionCompensation = \(PAGESIZE) * \(indexPath.section)")
         let index = PAGESIZE * (indexPath.section) + indexPath.item
-        //        print("index: \(index)")
-        //        print("memory Description: \(memories[index].memoryImageName())")
-        
-        //print("indexPath.item in Memories: \(indexPath.item)")
         return memories[index]
-        
         
     }
     
